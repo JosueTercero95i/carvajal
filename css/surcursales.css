@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif; 
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/background2.png');  
+    background-size: cover;  
+    background-position: center;  
+    background-attachment: fixed;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Asegura que no haya desplazamiento no deseado */
+    padding-top: 80px; /* Ajusta según la altura de tu header */
+
+}
+
+/* Mantener el header sin cambios */
+header {
+    color: var(--text-100);
+    background-color: #ffffff; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 999;
+    border-bottom: 5px solid #FFA500; 
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.menu-logo img {
+    width: 40px;
+    height: auto;
+}
+
+.menu-items {
+    display: flex;
+    gap: 15px;
+}
+
+.menu-item {
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(230, 230, 230);
+    color: black;
+    text-decoration: none;
+    border-radius: 13px;
+    transition: all 0.3s ease; 
+}
+
+.menu-item:hover {
+    background-color: #d3d3d3;
+    color: rgb(0, 0, 0); 
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.021); 
+}
+
+
+.sucursales {
+    padding-top: 100px; /* Ajusta según la altura del header */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre sucursales */
+    flex-wrap: nowrap; /* Asegura que siempre estén una al lado de la otra */
+    padding-bottom: 50px; /* Espacio extra en la parte inferior */
+    max-width: 100%;
+    overflow-x: auto; /* Agrega desplazamiento horizontal en caso de ser necesario */
+}
+
+.sucursal {
+    border: 2px solid #ddd;
+    padding: 30px;
+    width: 45%; /* Un poco menos de la mitad para que quepan bien */
+    min-width: 300px; /* Evita que se vuelvan demasiado pequeñas */
+    border-radius: 15px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover para darle dinamismo */
+.sucursal:hover {
+    transform: scale(1.03);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para el texto dentro de la sucursal */
+.sucursal h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.sucursal p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.sucursal a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ff6600;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 2px solid #ff6600;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Cambia el color del botón cuando pasas el mouse */
+.sucursal a:hover {
+    background: #ff6600;
+    color: white;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .sucursales {
+        gap: 10px; /* Reduce el espacio entre las sucursales en móviles */
+        overflow-x: auto; /* Agrega desplazamiento horizontal si es necesario */
+        justify-content: flex-start; /* Asegura que no se desalineen */
+    }
+
+    .sucursal {
+        width: 48%; /* Ajusta el tamaño para que encajen mejor */
+        min-width: 280px; /* Evita que se vuelvan demasiado pequeñas */
+    }
+}

@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif; 
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/background1.png');  
+    background-size: cover;  
+    background-position: center;  
+    background-attachment: fixed;  /* Fija la imagen de fondo cuando se haga scroll */
+}
+
+/* Mantener el header sin cambios */
+header {
+    color: var(--text-100);
+    text-align: right;
+    background-color: #ffffff; /* Color de fondo blanco */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 999;
+    border-bottom: 5px solid #FFA500; /* Línea naranja de 5px de grosor */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.menu-logo img {
+    width: 40px;
+    height: auto;
+}
+
+.menu-items {
+    display: flex;
+    gap: 15px;
+}
+
+.menu-item {
+    font-size: 14px;
+    font-weight: 590;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(230, 230, 230);
+    color: black;
+    text-decoration: none;
+    border-radius: 13px;
+    transition: all 0.3s ease; 
+}
+
+.menu-item:hover {
+    background-color: #d3d3d3;
+    color: rgb(0, 0, 0); 
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.021); 
+}
+
+/* Agregar animación de hover a todas las secciones */
+section {
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease; /* Transición fluida */
+}
+
+section:hover {
+    background-color: #d3d3d3;
+    color: rgb(0, 0, 0); 
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.021);
+}
+
+/* Estilo para el contenedor de las secciones */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto */
+    gap: 20px; /* Espacio entre las secciones */
+    padding: 120px 20px; /* Evitar que el contenido se solape con el header fijo */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para la sección "Sobre Nosotros" */
+section.sobre-nosotros {
+    grid-column: span 1; /* Ocupa toda la fila */
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Distribución de las tres secciones debajo de "Sobre Nosotros" */
+.content-wrapper .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 20px;
+}
+
+/* Estilo para los encabezados de las secciones */
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilo para las imágenes dentro de las secciones */
+section img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+}
+
+section img:hover {
+    transform: scale(1.05);
+}
+
+/* Agregar un botón atractivo para acciones */
+.button {
+    display: inline-block;
+    background-color: #FF6347; /* Naranja vibrante */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #7FFF00; /* Verde brillante */
+    transform: scale(1.05);
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .content-wrapper {
+        grid-template-columns: 1fr; /* Coloca todo el contenido en una sola columna */
+    }
+    
+    .content-wrapper .row {
+        grid-template-columns: 1fr; /* Coloca las 3 secciones en una sola columna */
+    }
+}
